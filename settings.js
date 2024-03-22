@@ -10,36 +10,36 @@ const chalk = require("chalk")
 
 // GLOBAL OWNER //
 
-global.owner = ['6283877750169'] //GANTI JADI NO MU
-global.namaowner = "K I Z H" // GANTI JADI NAMA MU
-global.namebot = "IZUMI MD" // GANT JADI NAMA BOT MU
+global.owner = ['6285380779466'] //GANTI JADI NO MU
+global.namaowner = "Andrian" // GANTI JADI NAMA MU
+global.namebot = "XshopTopup" // GANT JADI NAMA BOT MU
 global.sessionName = 'sessions' // JANGAN DI UBAH
 global.prefa = ['','!','.',',','🐤','🗿'] // JANGAN DI UBAH KALAU GAK MAU EROR
 
 // WATERMARK //
 
-global.v = 'IZUMI MD' // GANTI AJA
-global.wm = 'kizh | dingin' // GANTI AJA
+global.v = 'XshopTopup' // GANTI AJA
+global.wm = 'Tele CH | t.me/xshoptopup' // GANTI AJA
 global.packname = ""
-global.author = "IZUMI BOT" // GANTI AJA
-global.author2 = "IZUMI" // GANTI SAJA
-global.footer = 'IZUMI MD' // GANTI AJA
+global.author = "XshopTopup" // GANTI AJA
+global.author2 = "XshopBot" // GANTI SAJA
+global.footer = 'XshopTopup' // GANTI AJA
 
 // FOTO MENU //
 
-global.thumbailUrl = "https://telegra.ph/file/d98b4738e971c3c88d062.jpg" // GANTI AJA KALAU MAU GANTI LOGO MENU NYA
-global.url = "https://chat.whatsapp.com/FZWnfnuPqJa5MPO2TpDAjD" // GANTI SAJA
+global.thumbailUrl = "https://e.top4top.io/p_3003aznum0.jpg" // GANTI AJA KALAU MAU GANTI LOGO MENU NYA
+global.url = "https://whatsapp.com/channel/0029VaVxgobAu3aI0i6rIy3h" // GANTI SAJA
 
 // PAYMENT //
-global.Qris = 'https://telegra.ph/file/7245643629f0d9575fd56.jpg' //GANTI JADI QRIS MU
-global.dana = '08xxx' // GANTI NO LU AJA
-global.gopay = '08xxx'  // GANTI NO LU AJA
+global.Qris = 'https://t.me/xshoptopup/121' //GANTI JADI QRIS MU
+global.dana = '085380779466' // GANTI NO LU AJA
+global.gopay = '085380779466'  // GANTI NO LU AJA
 global.scan = 'SCAN QRIS ALL PAY DI ATAS'
 
 // APIKEY
 
 global.skizoapi = 'KiiCode'
-global.lol = 'GataDios'
+global.lol = 'cf080567076fd196d87b5a28'
 
 // GLOBAL MESS //
 
@@ -57,7 +57,7 @@ global.mess = {
     endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Pukul 00:00 WIB.',
 }
 global.limitawal = {
-	free: "100",
+	free: "unlimited",
         premium: "unlimited"
 }
 //BATAS
