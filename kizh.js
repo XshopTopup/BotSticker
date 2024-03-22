@@ -344,113 +344,8 @@ limit: limitUser,
 console.log(err)
 }
 //=================================================//
-if (tebaklagu.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebaklagu[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await m.reply(`🎮 *TEBAK LAGU*  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? ketik tebak lagu`)
- delete tebaklagu[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
-}
 
-if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = kuismath[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
- await m.reply(`🎮 Kuis Matematika  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math mode`)
- delete kuismath[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
-}
 
-if (tebakgambar.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakgambar[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await m.reply(`🎮 *TEBAK GAMBAR*  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? ketik tebak gambar`)
- delete tebakgambar[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
-}
-
-if (tebakkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakkata[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
- await m.reply(`🎮 *TEBAK KATA*  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? ketik tebak kata`)
- delete tebakkata[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
-}
-
-if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = caklontong[m.sender.split('@')[0]]
-deskripsi = caklontong_desk[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await m.reply(`🎮 *TEBAK LONTONG*  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? ketik tebak lontong`)
- delete caklontong[m.sender.split('@')[0]]
-delete caklontong_desk[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
-}
-
-if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebakkalimat[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
- await m.reply(`🎮 *TEBAK KALIMAT*  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? ketik tebak kalimat`)
- delete tebakkalimat[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
-}
-
-if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebaklirik[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
- await m.reply(`🎮 *TEBAK LIRIK*  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? ketik tebak lirik`)
- delete tebaklirik[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
-}
-
-if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-kuis = true
-jawaban = tebaktebakan[m.sender.split('@')[0]]
-if (budy.toLowerCase() == jawaban) {
-await m.reply(`🎮 *TEBAK TEBAKKAN*  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? ketik tebak tebakan`)
- delete tebaktebakan[m.sender.split('@')[0]]
-} else m.reply('*Jawaban Salah!*')
-}
-
-//anti toxic
-const isToxic = /anj(k|g)|ajn?(g|k)|a?njin(g|k)|bajingan|b(a?n)?gsa?t|ko?nto?l|me?me?(k|q)|pe?pe?(k|q)|meki|titi(t|d)|pe?ler|tetek|toket|ngewe|go?blo?k|to?lo?l|idiot|(k|ng)e?nto?(t|d)|jembut|bego|dajj?al|janc(u|o)k|pantek|puki ?(mak)?|kimak|babi|anj|bangsat|bgsd|peler|pantek|ngentod|kontol|memek|ngentd|ngntod|koncol|kncl|kncol|kampang|lonte|col(i|mek?)|pelacur|henceu?t|nigga|fuck|dick|bitch|tits|bastard|asshole|a(su|sw|syu)/i // tambahin sendiri
-
-if (db.data.chats[m.chat].toxic) {
-if (budy.match(`${isToxic}`)) {
-if (isAdmins) return reply(`Admin Mah Bebas Yakan?`)
-if (isOwner) return reply(`Gw Mah Bebas Yakan?`)
-kizh.sendMessage(m.chat, { delete: m.key })
-kizh.sendMessage(m.chat, { delete: m.key })
-//kizh.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-}
-}
-if (isCmd && m.isGroup) { 
-console.log(chalk.bold.rgb(255, 178, 102)('\x1b[1;31m~\x1b[1;37m> [\x1b[1;32mCMD\x1b[1;37m]'), chalk.bold.rgb(153, 255, 153)(command), chalk.bold.rgb(204, 204, 0)("from"), chalk.bold.rgb(153, 255, 204)(pushname), chalk.bold.rgb(204, 204, 0)("in"), chalk.bold.rgb(255, 178, 102)("Group Chat"), chalk.bold('[' + args.length + ']')); 
-}
-
-if (isCmd && !m.isGroup) { 
-console.log(chalk.bold.rgb(255, 178, 102)('\x1b[1;31m~\x1b[1;37m> [\x1b[1;32mCMD\x1b[1;37m]'), chalk.bold.rgb(153, 255, 153)(command), chalk.bold.rgb(204, 204, 0)("from"), chalk.bold.rgb(153, 255, 204)(pushname), chalk.bold.rgb(204, 204, 0)("in"), chalk.bold.rgb(255, 178, 102)("Private Chat"), chalk.bold('[' + args.length + ']')); 
-}
-
-// Response Addlist
-if (!isCmd && isGroup && isAlreadyResponList(from, body, db_respon_list)) {
-var get_data_respon = getDataResponList(from, body, db_respon_list)
-if (get_data_respon.isImage === false) {
-kizh.sendMessage(from, { text: sendResponList(from, body, db_respon_list) }, {
-quoted: m
-})
-} else {
-kizh.sendMessage(from, { image: await getBuffer(get_data_respon.image_url), caption: get_data_respon.response }, {
-quoted: m
-})
-}
-}
 
 
 // Public & Self
@@ -575,25 +470,7 @@ case 'creator': {
 await kizh.sendContact(m.chat, global.owner, m)
 }
 break
-case 'addprem':
-if (!isOwner) return reply(mess.owner)
-if (!args[0]) return reply(`Use ${prefix+command} number\nExample ${prefix+command} 62xxx`)
-prrkek = q.split("|")[0].replace(/[^0-9]/g, '')
-let ceknya = await kizh.onWhatsApp(prrkek)
-if (ceknya.length == 0) return reply(`Enter a valid and registered number on WhatsApp!!!`)
-premium.push(prrkek)
-fs.writeFileSync('./database/premium.json', JSON.stringify(premium))
-reply(`The Number ${prrkek} Has Been Premium!`)
-break
-case 'delprem':
-if (!isOwner) return reply(mess.owner)
-if (!args[0]) return reply(`Use ${prefix+command} nomor\nExample ${prefix+command} 62xxx`)
-ya = q.split("|")[0].replace(/[^0-9]/g, '')
-unp = premium.indexOf(ya)
-premium.splice(unp, 1)
-fs.writeFileSync('./database/premium.json', JSON.stringify(premium))
-reply(`The Number ${ya} Has Been Removed Premium!`)
-break
+
 case 'addowner':
 if (!isOwner) return reply(mess.owner)
 if (!args[0]) return reply(`Use ${prefix+command} number\nExample ${prefix+command} 62xxx`)
@@ -613,181 +490,11 @@ owner.splice(unp, 1)
 fs.writeFileSync('./database/owner.json', JSON.stringify(owner))
 reply(`The Numbrr ${ya} Has been deleted from owner list by the owner!!!`)
 break
-case 'listpremium': case 'listprem':
-teks = '*Premium List*\n\n'
-for (let kizh of premium) {
-teks += `- ${kizh}\n`
-}
-teks += `\n*Total : ${premium.length}*`
-kizh.sendMessage(m.chat, { text: teks.trim() }, 'extendedTextMessage', { quoted: m, contextInfo: { "mentionedJid": premium } })
-break
-case 'listowner': case 'listown':
-teks = '*owner List*\n\n'
-for (let kontol of owner) {
-teks += `- ${kontol}\n`
-}
-teks += `\n*Total : ${owner.length}*`
-kizh.sendMessage(m.chat, { text: teks.trim() }, 'extendedTextMessage', { quoted: m, contextInfo: { "mentionedJid": owner } })
-break
-case'neko':{
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-let neko = await getBuffer(`https://skizo.tech/api/nsfw?search=neko&apikey=${skizoapi}`)
-await kizh.sendMessage(m.chat, {image: neko, caption: `Nih ${command} Nya 😋`},{quoted: m})
-}
-break
-case'waifu':{
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-let waifu = await getBuffer(`https://skizo.tech/api/nsfw?search=waifu&apikey=${skizoapi}`)
-await kizh.sendMessage(m.chat, {image: waifu, caption: `Nih ${command} Nya 😋`},{quoted: m})
-}
-break
-case'izumi':{
-reply(mess.wait)
-let izumi = await getBuffer(`https://api.betabotz.eu.org/api/anime/sagiri?apikey=beta-kizh1`)
-await kizh.sendMessage(m.chat, {image: izumi, caption: `Nih ${command} Nya 😋`},{quoted: m})
-}
-break
-case'shinomiya':{
-reply(mess.wait)
-let shinomiya = await getBuffer(`https://api.betabotz.eu.org/api/anime/shinomiya?apikey=beta-kizh1`)
-await kizh.sendMessage(m.chat, {image: shinomiya, caption: `Nih ${command} Nya 😋`},{quoted: m})
-}
-break
-case 'ai': case 'chatgpt':
-try {
-if (!text) return reply(`Contoh:\n${prefix}${command} Apa itu chatgpt`)
-let result = await fetchJson(`https://skizo.tech/api/openai?text=${text}&apikey=${skizoapi}`)
-const gpt = result.result
-reply(`${gpt}`)
-} catch (err) {
-console.log(err)
-reply('Terjadi Kesalahan')
-}
-break
-case 'gimage': case 'pinterest': case'pin': {
-if (!q) return reply (`salah!!\nContoh: ${prefix + command} jokowi pake jas hujan`)
-reply(mess.wait)
-let res = await fetchJson (`https://skizo.tech/api/pinterest?search=${q}&apikey=${skizoapi}`)
-kizh.sendMessage(from, {image: {url: res[0].media.url}}, {quoted:m})
-}
-break
-case 'instagram':
-case 'igdl':
-case 'ig': {
-if (!text) return reply(`Contoh: ${prefix + command} link`);
-reply(mess.wait);
-let data = await fetchJson(`https://api.lolhuman.xyz/api/instagram?apikey=Akiraa&url=${encodeURIComponent(text)}`);
-const videoUrl = data.result[0];
-const videoCaption = "Video Instagram Nya";
-kizh.sendMessage(m.chat, { caption: 'ini dia video Instagram nya', video: { url: videoUrl } }, { quoted: m });
 
-}
-break
-case 'memeindo':
-reply(mess.wait)
-kizh.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/meme/memeindo?apikey=${lol}`}, caption: `sangad Cringe Kaya idup Lo🗿`}, {quoted: m})
-break
-case 'playtiktok':{
-if (!q) return reply( `Example : ${prefix + command} story wa`)
-reply(mess.wait);
-const response = await fetch(`https://skizo.tech/api/ttsearch?search=${q}&apikey=${skizoapi}`);
-const data = await response.json();
-kizh.sendMessage(m.chat, { video: { url: data.play }, caption: data.title }, { quoted: m });
-}
-break
-case 'tiktokaudio':{
-if (!text) return reply( `Example : ${prefix + command} link`)
-reply(mess.wait);
-if (!q.includes('tiktok')) return reply(`Link Invalid!!`)
-require('./lib/tiktok').Tiktok(q).then( data => {
-kizh.sendMessage(m.chat, { audio: { url: data.audio }, mimetype: 'audio/mp4' }, { quoted: m })
-})
-}
-break
-case 'yts': case 'ytsearch':{
-if (!text) return reply( `Example : ${prefix + command} lagu kisana2`)
-let reso = await yts(`${text}`)
-let aramat = reso.all
-var tbuff = await getBuffer(aramat[0].image)
-let teks = aramat.map(v => {
-switch (v.type) {
-case 'video': return `
-📛 Title : *${v.title}* 
-⏰ Durasi: ${v.timestamp}
-🚀 Diupload ${v.ago}
-😎 Views : ${v.views}
-🌀 Url : ${v.url}
-`.trim()
-case 'channel': return `
-📛 Channel : *${v.name}*
-🌀 Url : ${v.url}
-👻 Subscriber : ${v.subCountLabel} (${v.subCount})
-🎦 Total Video : ${v.videoCount}
-`.trim()
-}
-}).filter(v => v).join('\n----------------------------------------\n')
 
-kizh.sendMessage(m.chat, { image: tbuff, caption: teks }, { quoted: m })
 
- .catch((err) => {
-reply("Not found")
-})
-}
-break
-case 'ytmp4':
-case 'playmp4':
-if (!text) return reply( `Example : ${prefix + command} link`)
-axios.get(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${lol}&url=${args[0]}`)
-.then(({ data }) => {
-var caption = `❖ Title    : *${data.result.title}*\n`
-caption += `❖ Size     : *${data.result.size}*`
-kizh.sendMessage(m.chat, { image: { url: data.result.thumbnail }, caption }).then(() => {
-kizh.sendMessage(m.chat, { video: { url: data.result.link }, mimetype: 'video/mp4', fileName: `${data.result.title}.mp4` })})
-})
-.catch(console.error)
-break
-case 'ytmp3':
-case 'playmp3':
-if (!text) return reply("Masukan link youtube nya kak")
-try{
-let info = await ytdl.getInfo(q);
-let audioFormats = ytdl.filterFormats(info.formats, 'audioonly');
-try{
-var low = audioFormats[2].contentLength
-} catch (err){
-var low = audioFormats[0].contentLength
-}
-if (Number(low) > 15000000 ) return setReply(`Bjir sizenya ${FileSize(low)}\nAu ah ga mao download 😤`)
-if (audioFormats[0].contentLength == "undefined"){
-var rus = await yts(q)
-//var data = await rus.all.filter(v => v.type == 'video')
-var res = data[0]
-if (res.timestamp.split(":") > "10") return setReply("Tidak bisa mendownload audio lebih dari 10 menit")
-}
-downloadMp3(q) 
-} catch (err){
-console.log(err)
-}
-break
-case 'antitoxic': {
-if (!m.isGroup) return reply(mess.group)
-if (!isBotAdmins) return reply(mess.botAdmin)
-if (!isAdmins) return reply(mess.admin)
-if (args[0] === "on") {
-if (db.data.chats[m.chat].toxic) return reply(`Sudah Aktif Sebelumnya`)
-db.data.chats[m.chat].toxic = true
-reply(`Toxic Aktif !`)
-} else if (args[0] === "off") {
-if (!db.data.chats[m.chat].toxic) return reply(`Sudah Tidak Aktif Sebelumnya`)
-db.data.chats[m.chat].toxic = false
-reply(`Toxic Tidak Aktif !`)
-} else {
-reply(`Mode ${command}\n\n\nKetik ${prefix + command }on/off`)
-}
-}
-break
+
+
 case 'antilink2': {
 if (!m.isGroup) return reply(mess.group)
 if (!isBotAdmins) return reply(mess.botAdmin)
@@ -805,231 +512,10 @@ reply(`Mode ${command}\n\n\nKetik ${prefix + command}on/off`)
 }
 }
 break
-case 'ytplay':
-case 'play':{
-if (!q) return reply(`🚩 *Example:* ${prefix+command} lagu sad`)
-let yts = require('yt-search')
-let search = await yts(text)
-let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-let a = `💸Duration : ${anu.timestamp}\n🎉Viewers : ${anu.views}\n`
-await kizh.sendMessage(m.chat, {
-text: a,
-contextInfo: {
-externalAdReply: {
-showAdAttribution: true,
-title: anu.title,
-body: anu.ago,
-thumbnailUrl: anu.image,
-sourceUrl: anu.url,
-mediaType: 1,
-renderLargerThumbnail: true
-}
-}
-}, {
-quoted: m
-})
-await sleep(1000)
-if (anu.seconds < 1000) {
-await ytmp3(anu.url)
-} else reply('durasi nya bro ke besaran')
-}
-break
-case 'tiktok': case 'tt': {
-if (!q) return reply(`*CONTOH :* ${prefix+command} https://vt.tiktok.com/ZS8TQkpTK/`)
-await kizh.sendMessage(m.chat, { react: { text: "⏳",key: m.key,}})  
-spas = "             "
-let ler = await Tiktokdl(q)
-let cer = ler.result
-let cap = `${spas}*「 T I K T O K 」*
 
-*🎀Author:* ${cer.author.nickname}
-${namebot}
-`
-kizh.sendMessage(m.chat, { video: { url: cer.download.nowm }, caption: cap }, { quoted: m})
-};
-break
-case 'qc': case 'qcs': {
-if (!q) return reply(`Contoh: ${prefix + command} pink hallo\n\nlist warna\npink\nbiru\mmerah\nhijau\nkuning\nungu\nbirutua\nbirumuda\nabu\norange\nhitam\nputih\nteal\nmerahmuda\ncokelat\nsalmon\nmagenta\ntan\nwheat\ndeeppink\napi\nbirulangit\njingga\nbirulangitcerah\nhotpink\nbirumudalangit\nhijaulaut\nmerahtua\noranyemerah\ncyan\nungutua\nhijaulumut\nhijaugelap\nbirulaut\noranyetua\nungukehitaman\nfuchsia\nmagentagelap\nabu-abutua\npeachpuff\nhijautua\nmerahgelap\ngoldenrod\nabu-abutua\nungugelap\nemas\nperak`)
-if (text.length > 100) return reply(`🚩 Max 100 character.`)
-let [color, ...message] = text.split(' ');
-message = message.join(' ');
-let backgroundColor;
-switch(color) {
-case 'pink':
-backgroundColor = '#f68ac9';
-break;
-case 'biru':
-backgroundColor = '#6cace4';
-break;
-case 'merah':
-backgroundColor = '#f44336';
-break;
-case 'hijau':
-backgroundColor = '#4caf50';
-break;
-case 'kuning':
-backgroundColor = '#ffeb3b';
-break;
-case 'ungu':
-backgroundColor = '#9c27b0';
-break;
-case 'birutua':
-backgroundColor = '#0d47a1';
-break;
-case 'birumuda':
-backgroundColor = '#03a9f4'; 
-break;
-case 'abu':
-backgroundColor = '#9e9e9e';
-break;
-case 'orange':
-backgroundColor = '#ff9800';
-break;
-case 'hitam':
-backgroundColor = '#000000';
-break;
-case 'putih':
-backgroundColor = '#ffffff';
-break;
-case 'teal':
-backgroundColor = '#008080';
-break;
-case 'merahmuda':
-backgroundColor = '#FFC0CB';
-break;
-case 'cokelat':
-backgroundColor = '#A52A2A';
-case 'salmon':
-backgroundColor = '#FFA07A'; 
-break; 
-case 'magenta':
-backgroundColor = '#FF00FF'; 
-break; 
-case 'tan':
-backgroundColor = '#D2B48C'; 
-break;
-case 'wheat':
-backgroundColor = '#F5DEB3'; 
-break;
-case 'deeppink':
-backgroundColor = '#FF1493'; 
-break; 
-case 'api':
-backgroundColor = '#B22222';
-break;
-case 'birulangit':
-backgroundColor = '#00BFFF';
-break; 
-case 'jingga':
-backgroundColor = '#FF7F50';
-break;
-case 'birulangitcerah':
-backgroundColor = '#1E90FF'; 
-break; 
-case 'hotpink':
-backgroundColor = '#FF69B4'; 
-break; 
-case 'birumudalangit':
-backgroundColor = '#87CEEB'; 
-break; 
-case 'hijaulaut':
-backgroundColor = '#20B2AA'; 
-break; 
-case 'merahtua':
-backgroundColor = '#8B0000'; 
-break; 
-case 'oranyemerah':
-backgroundColor = '#FF4500'; 
-break; 
-case 'cyan':
-backgroundColor = '#48D1CC'; 
-break; 
-case 'ungutua':
-backgroundColor = '#BA55D3'; 
-break; 
-case 'hijaulumut':
-backgroundColor = '#00FF7F'; 
-break; 
-case 'hijaugelap':
-backgroundColor = '#008000'; 
-break; 
-case 'birulaut':
-backgroundColor = '#191970'; 
-break; 
-case 'oranyetua':
-backgroundColor = '#FF8C00'; 
-break; 
-case 'ungukehitaman':
-backgroundColor = '#9400D3'; 
-break; 
-case 'fuchsia':
-backgroundColor = '#FF00FF'; 
-break; 
-case 'magentagelap':
-backgroundColor = '#8B008B'; 
-break;
-case 'abu-abutua':
-backgroundColor = '#2F4F4F'; 
-break;
-case 'peachpuff':
-backgroundColor = '#FFDAB9'; 
-break;
-case 'hijautua':
-backgroundColor = '#BDB76B'; 
-break;
-case 'merahgelap':
-backgroundColor = '#DC143C'; 
-break;
-case 'goldenrod':
-backgroundColor = '#DAA520'; 
-break;
-case 'abu-abutua':
-backgroundColor = '#696969'; 
-break;
-case 'ungugelap':
-backgroundColor = '#483D8B'; 
-break;
-case 'emas':
-backgroundColor = '#FFD700'; 
-break;
-case 'perak':
-backgroundColor = '#C0C0C0'; 
-break;
-default:
-return reply('Warna yang dipilih tidak tersedia.')
-}
-let obj = {
-type: 'quote',
-format: 'png',
-backgroundColor,
-width: 512,
-height: 768,
-scale: 2,
-messages: [
-{
-entities: [],
-avatar: true,
-from: {
-id: 1,
-name: pushname,
-photo: { 
-url: await kizh.profilePictureUrl(m.sender, "image").catch(() => 'https://telegra.ph/file/999b290ecb3e50107a9da.jpg'),
-}
-},
-text: message,
-replyMessage: {},
-},
-],
-};
-let response = await axios.post('https://quote.btch.bz/generate', obj, {
-headers: {
-'Content-Type': 'application/json',
-},
-});
-let buffer = Buffer.from(response.data.result.image, 'base64');
-kizh.sendImageAsSticker(m.chat, buffer, m, { packname: `${global.packname}`, author: `${global.author}`})
-}
-break
+
+
+  
 case 'stiker': case 'sticker': case 's': case 'stickergif': case 'sgif': {
 if (!quoted) return reply(`Balas Video/Image Dengan Caption ${prefix + command}`)
 if (/image/.test(mime)) {
@@ -1048,125 +534,14 @@ await fs.unlinkSync(media)
 } else reply(`Balas Video/Image Dengan Caption ${prefix + command}`)
 }
 break
-case 'smeme': {
-let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
-if (!/image/.test(mime)) return reply(respond)
-if (!q) return reply(respond)
-reply(mess.wait)
-let atas = q.split('|')[0] ? q.split('|')[0] : '-'
-let bawah = q.split('|')[1] ? q.split('|')[1] : '-'
-let dwnld = await kizh.downloadAndSaveMediaMessage(qmsg)
-let fatGans = await TelegraPh(dwnld)
-let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(bawah)}/${encodeURIComponent(atas)}.png?background=${fatGans}`
-let FaTiH = await kizh.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(FaTiH)
-}
-break
-case 'hidetag': {
+
+
+  
+case 'hidetag': case 'h': {
 if (!m.isGroup) return reply(mess.group)
 if (!isOwner) return reply(mess.owner)
 kizh.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
 }
-break
-case 'simi': case 'si': {
-if (!q) return reply(`Example: ${prefix + command}`)
-let data = await fetchJson(`https://api.lolhuman.xyz/api/simi?apikey=${lol}&text=${text}`)
-reply(data.result)
-}
-break
-case 'tiktokgirl':
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-var asupan = JSON.parse(fs.readFileSync('./random/tiktokvids/tiktokgirl.json'))
-var hasil = pickRandom(asupan)
-kizh.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
-break
-case 'tiktokghea':
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-var gheayubi = JSON.parse(fs.readFileSync('./random/tiktokvids/gheayubi.json'))
-var hasil = pickRandom(gheayubi)
-kizh.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
-break
-case 'tiktokbocil':
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-var bocil = JSON.parse(fs.readFileSync('./random/tiktokvids/bocil.json'))
-var hasil = pickRandom(bocil)
-kizh.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
-break
-case 'tiktoknukhty':
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-var ukhty = JSON.parse(fs.readFileSync('./random/tiktokvids/ukhty.json'))
-var hasil = pickRandom(ukhty)
-kizh.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
-break
-case 'tiktoksantuy':
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-var santuy = JSON.parse(fs.readFileSync('./random/tiktokvids/santuy.json'))
-var hasil = pickRandom(santuy)
-kizh.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
-break
-case 'tiktokkayes':
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-var kayes = JSON.parse(fs.readFileSync('./random/tiktokvids/kayes.json'))
-var hasil = pickRandom(kayes)
-kizh.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
-break
-case 'tiktokpanrika':
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-var rikagusriani = JSON.parse(fs.readFileSync('./random/tiktokvids/panrika.json'))
-var hasil = pickRandom(rikagusriani)
-kizh.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
-break
-case 'tiktoknotnot':
-if (!isPremium) return reply(mess.premium)
-reply(mess.wait)
-var notnot = JSON.parse(fs.readFileSync('./random/tiktokvids/notnot.json'))
-var hasil = pickRandom(notnot)
-kizh.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
-break
-case 'store':
-case 'shop': 
-case 'list': {
-let teks = '┌──⭓「 *LIST STORE* 」\n│\n'
-for (let x of db_respon_list) {
-teks += `│⭔ ${x.key}\n`
-}
-teks += `│\n└────────────⭓\n\n`
-reply(teks)
-}
-break
-case 'addlist':
-if (!isOwner) return reply(mess.owner)
-if (!m.isGroup) return reply(mess.group)
-var args1 = text.split("@")[0]
-var args2 = text.split("@")[1]    
-if (!q.includes("@")) return reply(`Gunakan dengan cara ${prefix+command.slice(0)} *Nama Item@Item*\n\n_Contoh_\n\n${prefix+command.slice(0)} namalist@List`)
-if (isAlreadyResponList(from, args1, db_respon_list)) return reply(`List respon dengan key : *${args1}* sudah ada di group ini.`)
-if (/image/.test(mime)) {
-media = await kizh.downloadAndSaveMediaMessage(quoted)
-mem = await TelegraPh(media)
-addResponList(from, args1, args2, true, `${mem}`, db_respon_list)
-reply(`Sukses set list message dengan key : *${args1}*`)
-if (fs.existsSync(media)) fs.unlinkSync(media)
-} else {
-addResponList(from, args1, args2, false, '-', db_respon_list)
-reply(`Sukses Add List Dengan Kunci : *${args1}*`)
-}
-break
-case 'dellist':
-if (!isOwner) return reply(mess.owner)
-if (!m.isGroup) return reply(mess.group)
-if (db_respon_list.length === 0) return reply(`Belum ada list message di database`)
-if (!q) return reply(`Gunakan dengan cara ${command.slice(1)} *Nama Item*\n\n_Contoh_\n\n${command.slice(1)} namalist`)
-if (!isAlreadyResponList(from, q, db_respon_list)) return reply(`List Item dengan Nama *${q}* tidak ada di database!`)
-delResponList(from, q, db_respon_list)
-reply(`Sukses delete list message dengan key *${q}*`)
 break
 case 'payment':
 if (!isOwner) return reply(mess.owner)
@@ -1175,20 +550,6 @@ p += `*DANA: ${dana}*\n`
 p += `*GOPAY: ${gopay}*\n`
 p += `*QRIS: ${scan}*\n`
 kizh.sendMessage(m.chat, { image: { url: global.Qris }, caption: p }, { quoted: m })
-break
-case 'attp':
-if (!q) return reply('Masukan Text')
-reply(mess.wait)
-kizh.sendMessage(m.chat, { sticker: { url: `https://api.lolhuman.xyz/api/attp?apikey=${lol}&text=${q}`} }, { quoted: m })
-break
-case 'wallpaper':
-if (!text) return reply(`Contoh: ${prefix + command} wallpaper amime hd`);
-try{
-reply(mess.wait)
-kizh.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random2/${command}?apikey=${lol}` } })
-}catch(err){
-console.log((err) => reply(mess.err))
-}
 break
 case 'tourl': {
 const media = await kizh.downloadAndSaveMediaMessage(quoted)
@@ -1200,13 +561,6 @@ ${anuu}
 await fs.unlinkSync(media)
 }
 break
-case 'ss': case 'ssweb':{
-if (!q) return reply(`Contoh ${prefix+command} link`)
-reply(mess.wait)
-let krt = await scp1.ssweb(q)
-kizh.sendMessage(m.chat,{image: krt.result, caption: mess.success},{quoted:m})
-}
-break
 case 'remini': case 'hd': case 'hdr': {
 if (!quoted) return reply(`Fotonya Mana?`)
 if (!/image/.test(mime)) return reply(`Send/Reply Foto Dengan Caption ${prefix + command}`)
@@ -1216,217 +570,14 @@ let proses = await remini(media, "enhance");
 kizh.sendMessage(m.chat, { image: proses, caption: 'bilang apa?'}, { quoted: m})
 }
 break
-case 'apakah': {
-if (!q) return reply(`Penggunaan ${command} text\n\nContoh : ${command} saya wibu`)
-const apa = ['Iya', 'Tidak', 'Bisa Jadi', 'Betul']
-const kah = apa[Math.floor(Math.random() * apa.length)]
-reply(`Pertanyaan : Apakah ${q}\nJawaban : ${kah}`)
-}
-break
-case 'bisakah': {
-if (!q) return reply(`Penggunaan ${command} text\n\nContoh : ${command} saya menjadi presiden`)
-const bisa = ['Bisa', 'Gak Bisa', 'Gak Bisa Ajg Aaokawpk', 'TENTU PASTI KAMU BISA!!!!']
-const ga = bisa[Math.floor(Math.random() * bisa.length)]
-reply(`Pertanyaan : Apakah ${q}\nJawaban : ${ga}`)
-}
-break
-case 'bagaimanakah': {
-if (!q) return reply(`Penggunaan ${command} text\n\nContoh : ${command} cara mengatasi sakit hati`)
-const gimana = ['Gak Gimana2', 'Sulit Itu Bro', 'Maaf Bot Tidak Bisa Menjawab', 'Coba Deh Cari Di Gugel', 'astaghfirallah Beneran???', 'Pusing ah', 'Owhh Begitu:(', 'Gimana yeee']
-const ya = gimana[Math.floor(Math.random() * gimana.length)]
-reply(`Pertanyaan : Apakah ${q}\nJawaban : ${ya}`)
-}
-break
-case 'rate': {
-if (!q) return reply(`Penggunaan ${command} text\n\nContoh : ${command} Gambar aku`)
-const ra = ['5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65', '70', '75', '80', '85', '90', '95', '100']
-const te = ra[Math.floor(Math.random() * ra.length)]
-reply(`Rate : ${q}\nJawaban : *${te}%*`)
-}
-break
-case 'gantengcek': case 'cekganteng': {
-if (!q) return reply(`Penggunaan ${command} Nama\n\nContoh : ${command} kizh`)
-const gan = ['10% banyak" perawatan ya bang:v\nCanda Perawatan:v','30% Semangat bang Merawat Dirinya><','20% Semangat Ya bang👍','40% Wahh bang><','50% abang Ganteng deh><','60% Hai Ganteng🐊','70% Hai Ganteng🐊','62% Bang Ganteng><','74% abang ni ganteng deh><','83% Love You abang><','97% Assalamualaikum Ganteng🐊','100% Bang Pake Susuk ya??:v','29% Semangat Bang:)','94% Hai Ganteng><','75% Hai Bang Ganteng','82% wihh abang Pasti Sering Perawatan kan??','41% Semangat:)','39% Lebih Semangat🐊']
-const teng = gan[Math.floor(Math.random() * gan.length)]
-reply(`Nama : ${q}\nJawaban : *${teng}*`)
-}
-break           
-case 'cantikcek': case 'cekcantik': {
-if (!q) return reply(`Penggunaan ${command} Nama\n\nContoh : ${command} Lisaa`)
-const can = ['10% banyak" perawatan ya kak:v\nCanda Perawatan:v','30% Semangat Kaka Merawat Dirinya><','20% Semangat Ya Kaka👍','40% Wahh Kaka><','50% kaka cantik deh><','60% Hai Cantik🐊','70% Hai Ukhty🐊','62% Kakak Cantik><','74% Kakak ni cantik deh><','83% Love You Kakak><','97% Assalamualaikum Ukhty🐊','100% Kakak Pake Susuk ya??:v','29% Semangat Kakak:)','94% Hai Cantik><','75% Hai Kakak Cantik','82% wihh Kakak Pasti Sering Perawatan kan??','41% Semangat:)','39% Lebih Semangat🐊']
-const tik = can[Math.floor(Math.random() * can.length)]
-reply(`Nama : ${q}\nJawaban : *${tik}*`)
-}
-break
-case 'sangecek': case 'ceksange': case 'gaycek': case 'cekgay': case 'lesbicek': case 'ceklesbi': {
-if (!q) return reply(`Penggunaan ${command} Nama\n\nContoh : ${command} Lisaa`)
-const sangeh = ['5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65', '70', '75', '80', '85', '90', '95', '100']
-const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
-reply(`Nama : ${q}\nJawaban : *${sange}%*`)
-}
-break
-case 'kapankah': {
-if (!q) return reply(`Penggunaan ${command} Pertanyaan\n\nContoh : ${command} Saya Mati`)
-const kapan = ['5 Hari Lagi', '10 Hari Lagi', '15 Hari Lagi', '20 Hari Lagi', '25 Hari Lagi', '30 Hari Lagi', '35 Hari Lagi', '40 Hari Lagi', '45 Hari Lagi', '50 Hari Lagi', '55 Hari Lagi', '60 Hari Lagi', '65 Hari Lagi', '70 Hari Lagi', '75 Hari Lagi', '80 Hari Lagi', '85 Hari Lagi', '90 Hari Lagi', '95 Hari Lagi', '100 Hari Lagi', '5 Bulan Lagi', '10 Bulan Lagi', '15 Bulan Lagi', '20 Bulan Lagi', '25 Bulan Lagi', '30 Bulan Lagi', '35 Bulan Lagi', '40 Bulan Lagi', '45 Bulan Lagi', '50 Bulan Lagi', '55 Bulan Lagi', '60 Bulan Lagi', '65 Bulan Lagi', '70 Bulan Lagi', '75 Bulan Lagi', '80 Bulan Lagi', '85 Bulan Lagi', '90 Bulan Lagi', '95 Bulan Lagi', '100 Bulan Lagi', '1 Tahun Lagi', '2 Tahun Lagi', '3 Tahun Lagi', '4 Tahun Lagi', '5 Tahun Lagi', 'Besok', 'Lusa', `Abis Command Ini Juga Lu ${q}`]
-const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
-reply(`Pertanyaan : ${q}\nJawaban : *${kapankah}*`)
-}
-break
+
+
 //=================================================//
-case 'tebak': {
- if (!text) throw `Example : ${prefix + command} lagu\n\nOption : \n1. lagu\n2. gambar\n3. kata\n4. kalimat\n5. lirik\n6.lontong`
- if (args[0] === "lagu") {
- if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
- let anu = await JSON.parse(fs.readFileSync('./database/Games/tebaklagu.json'));
- let result = anu[Math.floor(Math.random() * anu.length)]
- let msg = await kizh.sendMessage(from, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, {quoted:m})
- kizh.sendText(from, `Lagu Tersebut Adalah Lagu dari?\n\nArtist : ${result.artist}\nWaktu : 60s`, msg).then(() => {
- tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
- })
- await sleep(30000)
- if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
- console.log("Jawaban: " + result.jawaban)
- kizh.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/52a9862e26a52b4a390e2.png' }, caption:`Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}\n\nIngin bermain? Ketik tebak lagu`},{quoted:m}) 
- delete tebaklagu[m.sender.split('@')[0]]
- }
- } else if (args[0] === 'gambar') {
- if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
- let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
- let result = anu[Math.floor(Math.random() * anu.length)]
- kizh.sendImage(from, result.img, `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : 60s`, m).then(() => {
- tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
- })
- await sleep(30000)
- if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
- console.log("Jawaban: " + result.jawaban)
- kizh.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/52a9862e26a52b4a390e2.png' }, caption: `Waktu Habis\nJawaban:  ${tebakgambar[m.sender.split('@')[0]]}\n\nIngin bermain? Ketik tebak gambar`}, {quoted:m}) 
- delete tebakgambar[m.sender.split('@')[0]]
- }
- } else if (args[0] === 'kata') {
- if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
- let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkata.json')
- let result = anu[Math.floor(Math.random() * anu.length)]
- kizh.sendText(from, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
- tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
- })
- await sleep(30000)
- if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
- console.log("Jawaban: " + result.jawaban)
- kizh.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/52a9862e26a52b4a390e2.png' }, caption: `Waktu Habis\nJawaban:  ${tebakkata[m.sender.split('@')[0]]}\n\nIngin bermain? Ketik tebak kata` }, {quoted:m}) 
- delete tebakkata[m.sender.split('@')[0]]
- }
- } else if (args[0] === 'kalimat') {
- if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
- let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkalimat.json')
- let result = anu[Math.floor(Math.random() * anu.length)]
- kizh.sendText(from, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, m).then(() => {
- tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
- })
- await sleep(30000)
- if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
- console.log("Jawaban: " + result.jawaban)
- kizh.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/52a9862e26a52b4a390e2.png' }, caption:`Waktu Habis\nJawaban:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nIngin bermain? Ketik tebak kalimat`}, {quoted:m}) 
- delete tebakkalimat[m.sender.split('@')[0]]
- }
- } else if (args[0] === 'lirik') {
- if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
- let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
- let result = anu[Math.floor(Math.random() * anu.length)]
- kizh.sendText(from, `Ini Adalah Lirik Dari Lagu? : *${result.soal}*?\nWaktu : 60s`, m).then(() => {
- tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
- })
- await sleep(30000)
- if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
- console.log("Jawaban: " + result.jawaban)
- kizh.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/52a9862e26a52b4a390e2.png' }, caption: `Waktu Habis\nJawaban:  ${tebaklirik[m.sender.split('@')[0]]}\n\nIngin bermain? Ketik tebak lirik`} , {quoted:m}) 
- delete tebaklirik[m.sender.split('@')[0]]
- }
- } else if (args[0] === 'lontong') {
- if (caklontong.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
- let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
- let result = anu[Math.floor(Math.random() * anu.length)]
- kizh.sendText(from, `*Jawablah Pertanyaan Berikut :*\n${result.soal}*\nWaktu : 60s`, m).then(() => {
- caklontong[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
-caklontong_desk[m.sender.split('@')[0]] = result.deskripsi
- })
- await sleep(30000)
- if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
- console.log("Jawaban: " + result.jawaban)
- kizh.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/52a9862e26a52b4a390e2.png' }, caption:`Waktu Habis\nJawaban:  ${caklontong[m.sender.split('@')[0]]}\nDeskripsi : ${caklontong_desk[m.sender.split('@')[0]]}\n\nIngin bermain? Ketik tebak lontong`}, {quoted:m}) 
- delete caklontong[m.sender.split('@')[0]]
-delete caklontong_desk[m.sender.split('@')[0]]
- }
- }
-}
-break
-case 'facebook': case 'fbdl': case 'fb': {
-reply(mess.wait);
-if (!text) return reply(`Contoh: ${prefix + command} link`);
-if (!text.includes('facebook')) return replygcxeon('Link Tidak Valid!!');
-let data = await fetchJson(`https://api.lolhuman.xyz/api/facebook?apikey=${lol}&url=${encodeURIComponent(text)}`);
-if (data && data.result) {
-const videoUrl = data.result[0];
-const videoCaption = data.caption || "Video Facebook";
-kizh.sendMessage(m.chat, { caption: videoCaption, video: { url: videoUrl } }, { quoted: m });
-} else {
-reply('Video Facebook tidak ditemukan atau terjadi kesalahan.');
-}
-}
-break
-case "google":{
-if (!text) return reply(`Contoh : ${prefix + command} cara mati dengan mudah`);
-let google = require("google-it");
-google({ query: text }).then((res) => {
-let teks = `Google Search From : ${text}\n\n`;
-for (let g of res) {
-teks += `• *Title* : ${g.title}\n`;
-teks += `• *Description* : ${g.snippet}\n`;
-teks += `• *Link* : ${g.link}\n\n────────────────────────\n\n`;
-}
-reply(teks)
-})
-}
-break
-case 'infocuaca':{
-if (!q) return reply(`Example: ${prefix + command} Tasikmalaya`)
-reply(mess.wait)
-var { data } = await axios.get(`https://api.lolhuman.xyz/api/cuaca/${q}?apikey=${lol}`)
-var titttttttttt = `Tempat : ${data.result.tempat}\n`
-titttttttttt += `Cuaca : ${data.result.cuaca}\n`
-titttttttttt += `Angin : ${data.result.angin}\n`
-titttttttttt += `Description : ${data.result.description}\n`
-titttttttttt += `Kelembapan : ${data.result.kelembapan}\n`
-titttttttttt += `Suhu : ${data.result.suhu}\n`
-titttttttttt += `Udara : ${data.result.udara}\n`
-titttttttttt += `Permukaan laut : ${data.result.permukaan_laut}\n`
-kizh.sendMessage(m.chat, { location: { degreesLatitude: data.result.latitude, degreesLongitude: data.result.longitude } })
-reply(titttttttttt)
-}
-break
-case 'cry': case 'kill': case 'hug': case 'pat': case 'lick': case 'kiss': case 'bite': case 'yeet': case 'bully': case 'bonk': case 'wink': case 'poke': case 'nom': case 'slap': case 'smile': case 'wave': case 'awoo': case 'blush': case 'smug': case 'glomp': case 'happy': case 'dance': case 'cringe': case 'cuddle': case 'highfive': case 'handhold':
-reply(mess.wait)
-axios.get(`https://api.waifu.pics/sfw/${command}`)
-.then(({data}) => {
-kizh.sendImageAsSticker(m.chat, data.url, m, { packname: global.global.packname, author: global.author })
-})
-break
-case 'emojimix': {
-let [emoji1, emoji2] = q.split`+`
-if (!emoji1) return reply(`Contoh : ${prefix + command} 😅+🤔`)
-if (!emoji2) return reply(`Contoh : ${prefix + command} 😅+🤔`)
-reply(mess.wait)
-let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
-for (let res of anu.results) {
-let encmedia = await kizh.sendImageAsSticker(m.chat, res.url, m, {
-packname: global.packname,
-author: 'tes',
-categories: res.tags
-})
-await fs.unlinkSync(encmedia)
-}
-                
-}
-break
+
+
+
+
+
 case 'tambah':{
 if (!text.includes('+')) return reply(`Gunakan dengan cara ${prefix+command} *angka* + *angka*\n\n_Contoh_\n\n${prefix+command} 1+2`)
 arg = args.join(' ')
@@ -1463,12 +614,7 @@ var nilai_one = Number(atas)
 var nilai_two = Number(bawah)
 reply(`${nilai_one / nilai_two}`)}
 break
-case 'txt2img': {
-if (!q) return reply(`Example: ${prefix + command} cat,fish`)
-reply(mess.wait)
-kizh.sendMessage(m.chat, { image: { url: `https://api.betabotz.eu.org/api/maker/text2img?text=${text}&apikey=beta-kizh1` }}, { quoted: m })
-}
-break
+
 case 'menu': {
 const menu = `
   「  *MENU*  」
@@ -1676,9 +822,9 @@ const key = `「  *ALLMENU*  」
  
      └─────────────────
 
-        ⌕ My YouTube Kizh ⌕
+        ⌕ XshopTopup ⌕
      
-         IzumiSagari_kizh
+       t.me/xshoptopup
 `
 kizh.sendMessage(m.chat, {
 text: key,
